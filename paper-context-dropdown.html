@@ -36,8 +36,7 @@ a list of polyer elements
       <div on-tap="open">
         <iron-icon class="trigger" icon="more-vert" ></iron-icon>
         <iron-dropdown id="dropdown" 
-          vertical-align="[[verticalAlign]]"
-          horizontal-align="[[horizontalAlign]]"
+          horizontal-align="right"
           disabled="[[disabled]]"
           open-animation-config="[[openAnimationConfig]]"
           close-animation-config="[[closeAnimationConfig]]">
@@ -52,8 +51,6 @@ a list of polyer elements
   Polymer({
     is: 'paper-context-dropdown',
     properties: {
-      verticalAlign: String,
-      horizontalAlign: String,
       disabled: Boolean,
       openAnimationConfig: {
         type: Array,
