@@ -8,11 +8,10 @@
     "web-components"
   ],
   "dependencies": {
-    "polymer": "*",
-    "icon-icons": "*",
-    "paper-item": "PolymerElements/paper-item#2659217567",
-    "paper-menu": "PolymerElements/paper-menu#c54ca0437f",
-    "iron-icon": "PolymerElements/iron-icon#f36b389288",
+    "icon-icons": "PolymerElements/iron-icons",
+    "paper-item": "PolymerElements/paper-item",
+    "paper-menu": "PolymerElements/paper-menu",
+    "iron-icon": "PolymerElements/iron-icon",
     "iron-dropdown": "PolymerElements/iron-dropdown#~1.0.6",
     "paper-material": "PolymerElements/paper-material#~1.0.6"
   }
