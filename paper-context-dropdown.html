@@ -1,0 +1,89 @@
+<link rel="import" href="/bower_components/paper-material/paper-material.html">
+<link rel="import" href="/bower_components/iron-dropdown/iron-dropdown.html">
+<link rel="import" href="/bower_components/iron-icon/iron-icon.html">
+<link rel="import" href="/bower_components/paper-menu/paper-menu.html">
+<link rel="import" href="/bower_components/paper-item/paper-item.html">
+<link rel="import" href="/bower_components/icon-icons/iron-icons.html">
+
+<dom-module id="paper-context-dropdown">
+  <style>
+    :host {
+      display: inline-block;
+      margin: 1em;
+    }
+    :host .trigger {
+      display:none;
+    }
+    :host:hover .trigger {
+      display:block;
+      color:gray;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+    :host:hover .dropdown-content {
+      width:100%;
+      right: 0;
+      top: 0;
+    }
+  </style>
+  <template>
+
+    <paper-material elevation="1">
+      <div on-tap="open">
+        <iron-icon class="trigger" icon="more-vert" ></iron-icon>
+    <iron-dropdown id="dropdown" 
+      vertical-align="[[verticalAlign]]"
+      horizontal-align="[[horizontalAlign]]"
+      disabled="[[disabled]]"
+      open-animation-config="[[openAnimationConfig]]"
+      close-animation-config="[[closeAnimationConfig]]">
+      <content select=".dropdown-content"></content>
+    </iron-dropdown>
+      </div>
+      <content></content>
+    </paper-material> 
+  </template>
+</dom-module>
+<script>
+  Polymer({
+    is: 'paper-context-dropdown',
+    properties: {
+      verticalAlign: String,
+      horizontalAlign: String,
+      disabled: Boolean,
+      openAnimationConfig: {
+        type: Array,
+        value: function() {
+          return [{
+            name: 'fade-in-animation',
+            timing: {
+              delay: 150,
+              duration: 50
+            }
+          }, {
+            name: 'expand-animation',
+            timing: {
+              delay: 150,
+              duration: 200
+            }
+          }]
+        }
+      },
+      closeAnimationConfig: {
+        type: Array,
+        value: function() {
+          return [{
+            name: 'fade-out-animation',
+            timing: {
+              duration: 200
+            }
+          }]
+        }
+      }
+    },
+    open: function() {
+      this.$.dropdown.open();
+    }
+  })
+</script>
