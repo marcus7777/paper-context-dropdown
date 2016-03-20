@@ -4,7 +4,11 @@
 <link rel="import" href="/bower_components/paper-menu/paper-menu.html">
 <link rel="import" href="/bower_components/paper-item/paper-item.html">
 <link rel="import" href="/bower_components/icon-icons/iron-icons.html">
-
+<!--
+`<paper-context-dropdown></paper-context-dropdown>` # Open Elements
+a list of polyer elements
+@demo demo.html
+-->
 <dom-module id="paper-context-dropdown">
   <style>
     :host {
@@ -28,18 +32,17 @@
     }
   </style>
   <template>
-
     <paper-material elevation="1">
       <div on-tap="open">
         <iron-icon class="trigger" icon="more-vert" ></iron-icon>
-    <iron-dropdown id="dropdown" 
-      vertical-align="[[verticalAlign]]"
-      horizontal-align="[[horizontalAlign]]"
-      disabled="[[disabled]]"
-      open-animation-config="[[openAnimationConfig]]"
-      close-animation-config="[[closeAnimationConfig]]">
-      <content select=".dropdown-content"></content>
-    </iron-dropdown>
+        <iron-dropdown id="dropdown" 
+          vertical-align="[[verticalAlign]]"
+          horizontal-align="[[horizontalAlign]]"
+          disabled="[[disabled]]"
+          open-animation-config="[[openAnimationConfig]]"
+          close-animation-config="[[closeAnimationConfig]]">
+          <content select=".dropdown-content"></content>
+        </iron-dropdown>
       </div>
       <content></content>
     </paper-material> 
